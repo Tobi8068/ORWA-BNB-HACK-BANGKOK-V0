@@ -12,8 +12,6 @@ import { useWriteContract } from "wagmi";
 import ORWAERC721NFT from "../../../abi/ORWAERC721NFT.json";
 import { setCarouselThumbs, selectProperty } from "../../../redux/features/propertySlice";
 import useDidMountEffect from "../../../hooks/useDidMountEffect";
-import env from "react-dotenv";
-
 
 interface CarouselThumb {
    img: string;
@@ -24,7 +22,7 @@ interface CarouselName {
 }
 
 const AddPropertyBody = () => {
-   const pinataKey = env.REACT_APP_PINATA_KEY;
+   const pinataKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI3YWIzNDUxNC0zYTVhLTQxODctYTA3My01MDE0NjM5OGM0MjEiLCJlbWFpbCI6ImdhcnJldHRldWdlbmU5MDlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiRlJBMSJ9LHsiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiTllDMSJ9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjkzODhkNGU1ZmExNjVkZDBmYWExIiwic2NvcGVkS2V5U2VjcmV0IjoiYjdlN2JkMDBkNDcwNzgzYzVlMzY2YWU0ODQ4Y2EzMmMzNjA1ODg2ZTNjODJhMzUyYTBhMDc2NTUzZTRmNDhhNSIsImV4cCI6MTc2NDQwMzIxMX0.CGUvrfxQJ9oyQ1UcYM0uICpKpzJ05qen9q1lC7svIjI";
    const dispatch = useDispatch();
    const { writeContract } = useWriteContract();
    const [carouselThumb, setCarouselThumb] = useState<CarouselThumb[]>([]);
