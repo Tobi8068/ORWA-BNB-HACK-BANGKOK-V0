@@ -24,7 +24,7 @@ interface CarouselName {
 }
 
 const AddPropertyBody = () => {
-   const pinataKey = env.PINATA_KEY;
+   const pinataKey = env.REACT_APP_PINATA_KEY;
    const dispatch = useDispatch();
    const { writeContract } = useWriteContract();
    const [carouselThumb, setCarouselThumb] = useState<CarouselThumb[]>([]);
